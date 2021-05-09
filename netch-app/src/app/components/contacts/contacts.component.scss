@@ -1,0 +1,32 @@
+@import '/src/styles.scss';
+
+.content-box {
+    min-height: 75vh;
+
+    &_body {
+        flex-flow: row nowrap;
+
+        .card {
+            flex: 100%;
+            flex-wrap: wrap;
+
+            @include hover_shadow($red);
+        }
+
+        .red {color: $red;}
+
+        h2 {
+            margin: 1rem 0;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        a {transition: 0.2s ease-in; @include hover_color($indigo);}
+
+        ul {width: 100%; max-width: 400px; margin: 0 auto;}
+        li {display: flex; margin: 1rem 0; justify-content: space-between; font-weight: 500;}
+
+        @media (max-width: 992px) {flex-wrap: wrap;}
+    }
+}

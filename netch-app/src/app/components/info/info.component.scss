@@ -1,0 +1,48 @@
+@import '/src/styles.scss';
+
+.card-group {
+    display: flex;
+    gap: 1rem;
+    flex: 1;
+
+    @media (max-width: 768px) {flex-wrap: wrap;}
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 100%;
+
+    @include hover_shadow($red)
+}
+
+.red {color: $red; font-weight: 500;}
+
+h1,h2,p {margin: 0;}
+
+h2 {
+    margin: 1rem 0;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+p {
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+svg {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    fill: $red;
+}
+
+ul {width: 100%; max-width: 1200px;}
+li {margin: 1rem 0;}
+li:nth-child(1) {margin-top: 0;}
+

@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'src/assets/sass/functions';
+@import 'src/assets/sass/reset';
+@import 'src/assets/sass/variables';
+@import 'src/assets/sass/components';
+
+// fonts
+@import url($Montserrat); // base
+@import url($LexendZetta); // logo
+@import url($MaterialIcons); // material icons
+
+body {
+    position: static;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    padding-top: 4rem;
+    background: $grey-dark;
+    color: $light;
+
+    ::selection {background: tt($indigo,0.5);}
+}
+
+::-webkit-scrollbar {
+    width: 0.7rem;
+    background: tt($dark, 0.3);
+}
+::-webkit-scrollbar-thumb {
+    background: $grey-middle;
+    border-radius: 1rem;
+}

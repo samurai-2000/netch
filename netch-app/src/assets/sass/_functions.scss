@@ -1,0 +1,11 @@
+@function tt($c, $a) {
+    @return transparentize($color: $c, $amount: $a);
+}
+
+@mixin hover_shadow($color) {
+    &:hover {box-shadow: 0 0 0 5px tt($color, 0.7);}
+}
+
+@mixin hover_color($color) {
+    &:hover {color: $color}
+}

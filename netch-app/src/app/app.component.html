@@ -1,0 +1,7 @@
+<ui-header></ui-header>
+<div class="wrapper">
+    <div [@routeAnimations]="prepareRoute(outlet)">
+        <router-outlet #outlet='outlet'></router-outlet>
+    </div>
+</div>
+
