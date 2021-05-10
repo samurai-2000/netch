@@ -3,7 +3,7 @@
 
 section {min-height: 100vh;}
 
-@mixin btn($color) {
+@mixin btn($color, $color2) {
 
     .btn {
         height: $btn_height;
@@ -19,7 +19,7 @@ section {min-height: 100vh;}
         cursor: pointer;
     
         &:hover, &:focus {
-            box-shadow: 0 0 0 5px tt($color, 0.7);
+            box-shadow: 0 0 0 5px tt($color2, 0.7);
         }
     
         &:disabled {
@@ -62,6 +62,7 @@ a.capsule {
         border-radius: 1rem;
         background-color: tt($dark, 0.5);
         padding: 1rem;
+        user-select: none;
 
         h1 {
             margin: 0;

@@ -1,0 +1,107 @@
+@import '/src/styles.scss';
+
+@include btn(tt($dark, 0.5), $indigo);
+.btn {flex: 1;}
+
+h2 {
+    margin: 1rem 0;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+h2.title {font-size: 1.5rem; margin-bottom: 2rem;}
+
+.card-group {display: flex; gap: 1rem;}
+
+.card.wrap {
+    &:nth-child(1) {
+        .card-group {
+        
+            @media (max-width: 992px) {flex-wrap: wrap;}
+        
+            .card {
+                flex: 100%;
+        
+                &:nth-child(1) {color: $red; @include hover_shadow($red);}
+                &:nth-child(2) {color: $yellow; @include hover_shadow($yellow);}
+                &:nth-child(3) {color: $mint; @include hover_shadow($mint);}
+                &:nth-child(4) {color: $indigo; @include hover_shadow($indigo);}
+
+                ul {
+                    width: 100%;
+                    max-width: 400px;
+                    margin: 0 auto;
+            
+                    li {
+                        margin: 1rem 0;
+                        color: $light;
+            
+                        span {
+                            display: block;
+                            font-weight: 600;
+            
+                            &.red {color: $red;}
+                            &.yellow {color: $yellow;}
+                            &.mint {color: $mint;}
+                            &.indigo {color: $indigo;}
+                        }
+                    }
+                }
+            }
+        
+        }
+    }
+
+    &:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .btn {margin-top: 1rem; font-size: 1.2rem;}
+
+        .card-group {
+
+            @media (max-width: 1500px) {flex-wrap: wrap;}
+
+            .card {
+                flex: 100%;
+
+                @include hover_shadow($light);
+    
+                ul {
+                    width: 100%;
+                    max-width: 400px;
+                    margin: 0 auto;
+    
+                    li {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        
+                        span {
+                            font-weight: 500;
+                
+                            &.red {color: $red; font-weight: 600; font-size: 1.2rem; text-align: right;}
+                            &.yellow {color: $yellow; font-weight: 600; font-size: 1.2rem; text-align: right;}
+                            &.mint {color: $mint; font-weight: 600; font-size: 1.2rem; text-align: right;}
+                            &.indigo {color: $indigo; font-weight: 600; font-size: 1.2rem; text-align: right;}
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+
+    &:nth-child(3) {
+        display: flex; 
+        gap: 1rem; 
+
+        @media (max-width: 768px) {flex-wrap: wrap;}
+
+        .btn { 
+            @media (max-width: 768px) {flex: 100%;}
+        }
+        
+    }
+}

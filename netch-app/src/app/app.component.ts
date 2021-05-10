@@ -11,10 +11,14 @@ import { slideInAnimation } from './animations/routerAnimate';
 })
 export class AppComponent {
   
-  public document: Document
+  public modal = {
+    state: false,
+    header: '',
+    body: ''
+  }
 
-  constructor(@Inject(DOCUMENT) doc: Document){
-    this.document = doc
+  constructor(){
+    
   }
 
   public prepareRoute(outlet: RouterOutlet) {
@@ -25,11 +29,4 @@ export class AppComponent {
     )
   }
 
-  public offScroll() {
-    this.document.body.style.overflow = 'hidden'
-  }
-
-  public onScroll() {
-    this.document.body.style.overflow = 'hidden'
-  }
 }
