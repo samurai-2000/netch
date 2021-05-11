@@ -1,6 +1,6 @@
 @import '/src/styles.scss';
 
-@include btn(tt($dark, 0.5), $indigo);
+@include btn(tt($dark, 0.7), $indigo);
 .btn {flex: 1;}
 
 h2 {
@@ -25,7 +25,7 @@ h2.title {font-size: 1.5rem; margin-bottom: 2rem;}
                 &:nth-child(1) {color: $red; @include hover_shadow($red);}
                 &:nth-child(2) {color: $yellow; @include hover_shadow($yellow);}
                 &:nth-child(3) {color: $mint; @include hover_shadow($mint);}
-                &:nth-child(4) {color: $indigo; @include hover_shadow($indigo);}
+                &:nth-child(4) {color: $blue; @include hover_shadow($blue);}
 
                 ul {
                     width: 100%;
@@ -44,6 +44,7 @@ h2.title {font-size: 1.5rem; margin-bottom: 2rem;}
                             &.yellow {color: $yellow;}
                             &.mint {color: $mint;}
                             &.indigo {color: $indigo;}
+                            &.blue {color: $blue;}
                         }
                     }
                 }
@@ -57,7 +58,11 @@ h2.title {font-size: 1.5rem; margin-bottom: 2rem;}
         flex-direction: column;
         justify-content: space-between;
 
-        .btn {margin-top: 1rem; font-size: 1.2rem; @include hover_shadow($red);}
+        .btn {
+            margin-top: 1rem; 
+            font-size: 1.2rem; 
+            @include hover_shadow($red);
+        }
 
         .card-group {
 

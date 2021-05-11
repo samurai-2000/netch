@@ -14,7 +14,7 @@ body {
     overflow-y: scroll;
     overflow-x: hidden;
     padding-top: 4rem;
-    background: $grey-dark;
+    background: $grey-basic;
     color: $light;
 
     ::selection {background: tt($indigo,0.5);}
