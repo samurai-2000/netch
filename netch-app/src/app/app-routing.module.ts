@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactsComponent } from './components/contacts/contacts.component';
+import { ErrorComponent } from './components/error/error.component';
 import { GithubComponent } from './components/github/github.component';
 import { HomeComponent } from './components/home/home.component';
 import { InfoComponent } from './components/info/info.component';
@@ -16,7 +17,7 @@ const routes: Routes = [
   {path: 'info', component: InfoComponent, data: {animation: 'InfoPage'}},
   {path: 'github', component: GithubComponent, data: {animation: 'GitHubPage'}},
   {path: 'tracking', component: TrackingComponent, data: {animation: 'TrackingPage'}},
-
+  {path: '**', component: ErrorComponent}
 ];
 
 @NgModule({

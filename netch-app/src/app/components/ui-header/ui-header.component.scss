@@ -33,7 +33,7 @@
         .capsule {align-self: center;}
         .capsule, .link {font-size: 1.2rem;}
 
-        .active-link {color: $red;}
+        .active-link {color: $red;  &:hover {background-color: tt($red, 0.9);} @include hover_color($red);}
         .active-capsule {box-shadow: 0 0 0 5px tt($red, 0.7);}
     }
 
