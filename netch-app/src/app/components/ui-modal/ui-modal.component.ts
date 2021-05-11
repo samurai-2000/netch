@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, Inject, Input, OnInit } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, DoCheck, Inject, Input, OnInit } from '@angular/core';
 import { modal } from 'src/app/animations/modalAnimate';
 import { AppComponent } from 'src/app/app.component';
 
@@ -9,16 +9,17 @@ import { AppComponent } from 'src/app/app.component';
   styleUrls: ['./ui-modal.component.scss'],
   animations: [modal]
 })
-export class UiModalComponent implements OnInit {
+export class UiModalComponent implements OnInit, DoCheck{
 
   private doc: Document
+  private modalBody: HTMLElement
 
   @Input() 
   public state: boolean
   @Input() 
   public header: string
   @Input() 
-  public body: string
+  public body: any
 
   constructor(
     @Inject(DOCUMENT) doc: Document,
@@ -27,19 +28,28 @@ export class UiModalComponent implements OnInit {
     this.doc = doc
   }
 
-  ngOnInit(): void {
-  }  
+  ngDoCheck(): void {
+
+    this.modalBody = this.doc.getElementById('modal_body')
+
+    if(this.modalBody) {
+      this.modalBody.innerHTML = this.body
+    }
+
+  }
+
+  ngOnInit(): void {}  
 
   public switchScroll() {
 
     if(
-      this.doc.body.style.overflowY == 'auto' || 
+      this.doc.body.style.overflowY == 'scroll' || 
       this.doc.body.style.overflowY == ''
     ) 
       return this.doc.body.style.overflowY = 'hidden'
     
     if(this.doc.body.style.overflowY == 'hidden') 
-      return this.doc.body.style.overflowY = 'auto'
+      return this.doc.body.style.overflowY = 'scroll'
     
   }
 

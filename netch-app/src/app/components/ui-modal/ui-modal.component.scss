@@ -7,7 +7,7 @@
     width: 100%;
     height: 100%;
     padding: 1rem;
-    background-color: tt($light, 0.7);
+    background-color: tt($grey-dark, 0.7);
     backdrop-filter: blur(10px);
     overflow-y: auto;
     z-index: 1002;
@@ -21,14 +21,15 @@
         padding: 1rem;
         height: auto;
         min-height: 50vh;
-        background-color: tt($dark, 0.3);
+        background-color: tt($grey-middle, 0.3);
         border-radius: 1rem;
 
         &_header {
             padding: 1rem;
             margin-bottom: 1rem;
-            background-color: tt($dark, 0.3);
+            background-color: $grey-dark;
             border-radius: 1rem;
+            user-select: none;
 
             h1 {
                 margin: 0;
@@ -41,8 +42,13 @@
         &_body {
             flex: auto;
             padding: 1rem;
-            background-color: tt($dark, 0.3);
+            background-color: $grey-dark;
             border-radius: 1rem;
+        }
+
+        @include btn($grey-dark, $red);
+        .btn {
+            margin-top: 1rem;
         }
     }
 }

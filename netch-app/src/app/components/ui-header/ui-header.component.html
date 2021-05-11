@@ -1,4 +1,7 @@
 <header class="header-box">
+    <nav class="header-box__mobile-box">
+        <h1>NETCH</h1>
+    </nav>
     <nav class="header-box__link-box">
         <a
         routerLink=''
@@ -36,11 +39,15 @@
         [routerLinkActiveOptions]='{exact: true}'
         draggable='false' 
         class="link">GitHub</a>
-        <a
-        routerLink='/tracking'
-        routerLinkActive='active-capsule'
-        [routerLinkActiveOptions]='{exact: true}'
-        draggable='false' 
-        class="capsule">Что с моим заказом?</a>
+
+        <a class="link">
+            <a
+            routerLink='/tracking'
+            routerLinkActive='active-capsule'
+            [routerLinkActiveOptions]='{exact: true}'
+            draggable='false' 
+            class="capsule">Что с моим заказом?</a>
+        </a>
+        
     </nav>
 </header>

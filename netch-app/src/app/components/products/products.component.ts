@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from 'src/app/app.component';
+import { 
+  productsText,
+  webpackText 
+} from 'src/app/data/text';
 
 @Component({
   selector: 'netch-products',
@@ -13,8 +17,20 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public openModal() {
+  public openModal(header: string) {
     this.app.modal.state = true
+    if(header === 'Вебпак') {
+      this.app.modal.header = header
+      this.app.modal.body = webpackText
+      return
+    }
+    if(header === 'Услуги') {
+      this.app.modal.header = header
+      this.app.modal.body = productsText
+      return
+    }
+
+    
   }
 
 }
