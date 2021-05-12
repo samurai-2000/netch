@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { AfterContentInit, AfterViewInit, Component, DoCheck, Inject, Input, OnInit } from '@angular/core';
+import { Component, DoCheck, Inject, Input, OnInit } from '@angular/core';
 import { modal } from 'src/app/animations/modalAnimate';
 import { AppComponent } from 'src/app/app.component';
 

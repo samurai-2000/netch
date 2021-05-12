@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GithubService } from 'src/app/services/github.service';
 
 @Component({
   selector: 'netch-github',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GithubComponent implements OnInit {
 
-  constructor() { }
+  public imgUrl: string
+
+  constructor(
+    private github: GithubService
+  ) { }
 
   ngOnInit(): void {
+    this.github.getUser('samurai-2000').subscribe((res: any) => this.imgUrl = res.avatar_url)
   }
 
 }

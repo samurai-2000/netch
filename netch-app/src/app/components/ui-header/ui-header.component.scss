@@ -1,7 +1,24 @@
 @import '/src/styles.scss';
 
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background-color: tt($dark, 0.3);
+    user-select: none;
+
+    h1 {
+        text-align: center;
+        margin: 0;
+        font-family: 'Lexend Zetta', sans-serif;
+        font-size: 2rem;
+        font-weight: 400;
+        font-style: normal;
+    }
+}
 .header-box {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;
@@ -26,6 +43,8 @@
             flex: auto;
             font-weight: 500;
             transition: 0.2s ease-in;
+            border-top-left-radius: 1rem; 
+            border-top-right-radius: 1rem; 
             @include hover_color($indigo);
 
             &:hover {background-color: tt($indigo, 0.9);}

@@ -5,7 +5,7 @@ const animateParams = [
       style({
         position: 'fixed',
         width: '100%',
-        left: '1rem',
+        left: 0,
         opacity: 1
       })
     ], { optional: true }),
@@ -29,7 +29,7 @@ const animateParams = [
         [
             animate('0.2s ease-out', 
             style({ 
-                left: '1rem', 
+                left: 0, 
                 opacity: 1 
             }))
         ], { optional: true })

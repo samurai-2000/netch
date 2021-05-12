@@ -53,6 +53,7 @@ a.capsule {
 .content-box {
     display: flex;
     flex-direction: column;
+    height: auto;
     min-height: 50vh; 
     padding: 1rem;
     border-radius: 1rem;
