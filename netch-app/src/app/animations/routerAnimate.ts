@@ -6,13 +6,13 @@ const animateParams = [
         position: 'fixed',
         width: '100%',
         left: 0,
-        opacity: 1
+        opacity: 1,
       })
     ], { optional: true }),
     query(':enter', [
         style({ 
             left: '100%', 
-            opacity: 0 
+            opacity: 0,
         })
     ], { optional: true }),
     query(':leave', animateChild(), { optional: true }),
@@ -22,7 +22,7 @@ const animateParams = [
             animate('0.2s ease-in', 
             style({ 
                 left: '-100%', 
-                opacity: 0 
+                opacity: 0, 
             }))
         ], { optional: true }),
       query(':enter', 
@@ -30,7 +30,7 @@ const animateParams = [
             animate('0.2s ease-out', 
             style({ 
                 left: 0, 
-                opacity: 1 
+                opacity: 1,
             }))
         ], { optional: true })
     ]),

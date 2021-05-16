@@ -7,5 +7,9 @@
 }
 
 @mixin hover_color($color) {
-    &:hover {color: $color}
+    &:hover {color: $color;}
+}
+
+@mixin hover_bg-color($color) {
+    &:hover {background-color: $color;}
 }

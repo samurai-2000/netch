@@ -88,3 +88,10 @@ a.capsule {
     background-color: tt($dark, 0.7);
     transition: 0.2s ease-in;
 }
+
+.loader {
+    width: 100px;
+    height: 100px;
+    background: $indigo;
+    border-radius: 50%;
+}

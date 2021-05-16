@@ -1,5 +1,5 @@
 import { DOCUMENT } from '@angular/common';
-import { Component, DoCheck, Inject, Input, OnInit } from '@angular/core';
+import { Component, DoCheck, ElementRef, Inject, Input, OnInit, ViewChild } from '@angular/core';
 import { modal } from 'src/app/animations/modalAnimate';
 import { AppComponent } from 'src/app/app.component';
 
@@ -12,7 +12,6 @@ import { AppComponent } from 'src/app/app.component';
 export class UiModalComponent implements OnInit, DoCheck{
 
   private doc: Document
-  private modalBody: HTMLElement
 
   @Input() 
   public state: boolean
@@ -21,21 +20,17 @@ export class UiModalComponent implements OnInit, DoCheck{
   @Input() 
   public body: any
 
+  @ViewChild('modalBody') private modalBody!: ElementRef
+
   constructor(
     @Inject(DOCUMENT) doc: Document,
-    private app: AppComponent
+    private app: AppComponent,
   ) { 
     this.doc = doc
   }
 
   ngDoCheck(): void {
-
-    this.modalBody = this.doc.getElementById('modal_body')
-
-    if(this.modalBody) {
-      this.modalBody.innerHTML = this.body
-    }
-
+    if(this.modalBody) return this.modalBody.nativeElement.innerHTML = this.body
   }
 
   ngOnInit(): void {}  

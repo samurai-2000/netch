@@ -1,2 +1,37 @@
 @import '/src/styles.scss';
 
+.card-group {
+    display: flex;
+    flex: 100%;
+    gap: 1rem;
+
+    @media (max-width: 992px) {flex-direction: column;}
+
+    .card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex: 1;
+        user-select: none;
+
+        @include hover_bg-color(tt($indigo, 0.7));
+    }
+
+    h2,h3 {text-align: center;}
+
+    img {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 50%;
+        margin: 1rem;
+        cursor: pointer;
+    }
+
+    .error {
+        font-size: 4rem;
+        font-weight: 600;
+        color: $red;
+    }
+
+}

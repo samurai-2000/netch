@@ -5,7 +5,7 @@
 *ngIf='state' class="modal-wrapper">
     <div *ngIf='state' class="modal-box">
         <div class="modal-box_header"><h1>{{header}}</h1></div>
-        <div id="modal_body" class="modal-box_body"></div>
-        <button (click)='app.modal.state = false' class="btn">Выйти</button>
+        <div #modalBody id="modal_body" class="modal-box_body"></div>
+        <button (click)='app.modal.state = false' class="btn" >Выйти</button>
     </div>
 </div>

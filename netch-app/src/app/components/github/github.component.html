@@ -4,7 +4,19 @@
             <h1>Наша команда</h1>
         </div>
         <div class="content-box_body">
-            
+            <div class="card-group">
+                <div @Card *ngFor='let user of users' class="card">
+                    <img 
+                    (click)='openPageOfUser(user.user_url)'
+                    draggable="false"
+                    *ngIf='user.user_img' 
+                    [src]="user.user_img" 
+                    alt="user">
+                    <h2>{{user.user_name}}</h2>
+                    <h3>{{user.user_post}}</h3>
+                    <span *ngIf='user.error' class="error">:(</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>
